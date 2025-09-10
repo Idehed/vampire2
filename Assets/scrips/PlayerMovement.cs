@@ -7,13 +7,13 @@ public class PlayerMovement : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D _rb;
-    private float _speed = 5f;
+    [SerializeField] private float _speed = 5f;
     public InputAction playerControls;
-    [SerializeField] private bool facingRight = true;
+    private bool facingRight = true;
 
     Vector2 moveDirection = Vector2.zero;
 
-    private void Start()
+    private void Awake()
     {
        _rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
