@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,22 +6,35 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
-    private Vector2 _movementInput;
-    [SerializeField] private float _movementSpeed;
+    private float _speed = 5f;
+    public InputAction playerControls;
 
-    private void Awake()
+    Vector2 moveDirection = Vector2.zero;
+
+    private void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+       _rb = GetComponent<Rigidbody2D>();
     }
 
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
+
+    private void Update()
+    {
+        moveDirection = playerControls.ReadValue<Vector2>();
+    }
     private void FixedUpdate()
     {
-        _rb.linearVelocity = _movementInput * _movementSpeed;
+        _rb.linearVelocity = new Vector2(moveDirection.x * _speed, moveDirection.y * _speed);
     }
 
-    private void OnMove(InputValue inputValue)
-    {
-        _movementInput = inputValue.Get<Vector2>();
-    }
-
+    
 }
