@@ -11,7 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public InputAction playerControls;
     private bool facingRight = true;
 
-    Vector2 moveDirection = Vector2.zero;
+   public Vector2 moveDir = Vector2.zero;
+    
+  
 
     private void Awake()
     {
@@ -32,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        moveDirection = playerControls.ReadValue<Vector2>();
+        moveDir = playerControls.ReadValue<Vector2>();
         HandleAnimation();
         HandleFlip();
     }
@@ -45,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.linearVelocity = new Vector2(moveDirection.x * _speed, moveDirection.y * _speed);
+        _rb.linearVelocity = new Vector2(moveDir.x * _speed, moveDir.y * _speed);
     }
 
     private void HandleFlip()
