@@ -12,12 +12,6 @@ public class PropRandomizer : MonoBehaviour
         SpawnProps();
     }
 
-    
-    void Update()
-    {
-        
-    }
-
     void SpawnProps()
     {
         foreach (GameObject sp in propSpawnPoints)

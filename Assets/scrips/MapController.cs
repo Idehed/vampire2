@@ -7,12 +7,13 @@ public class MapController : MonoBehaviour
     public float checkerRadius;
     Vector3 noTerrainPosition;
     public LayerMask terrainMask;
+    public GameObject currentChunk;
     PlayerMovement pm;
 
     void Start()
     {
         pm = FindFirstObjectByType<PlayerMovement>();
-        terrainMask = LayerMask.GetMask("Terrain");
+
     }
 
 
@@ -23,9 +24,15 @@ public class MapController : MonoBehaviour
 
     void ChunkChecker()
     {
-        if(pm.moveDir.x > 0 && pm.moveDir.y == 0) //right
+
+        if(!currentChunk)
         {
-            if(!Physics2D.OverlapCircle(player.transform.position + new Vector3(20, 0, 0), checkerRadius, terrainMask))
+            return;
+        }
+
+        if (pm.moveDir.x > 0 && pm.moveDir.y == 0) //right
+        {
+            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(20, 0, 0), checkerRadius, terrainMask))
             {
                 noTerrainPosition = player.transform.position + new Vector3(20, 0, 0);
                 SpawnChunk();
@@ -95,3 +102,4 @@ public class MapController : MonoBehaviour
         Instantiate(terrainChunks[rand], noTerrainPosition, Quaternion.identity);
     }
 }
+

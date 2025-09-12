@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDir = playerControls.ReadValue<Vector2>();
         HandleAnimation();
-        HandleFlip();
+        //HandleFlip();
     }
 
     private void HandleAnimation()
