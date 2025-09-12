@@ -407,7 +407,7 @@ MonoBehaviour:
   terrainMask:
     serializedVersion: 2
     m_Bits: 64
-  currentChunk: {fileID: 0}
+  currentChunk: {fileID: 1264379280}
 --- !u!4 &546494970
 Transform:
   m_ObjectHideFlags: 0
@@ -518,9 +518,10 @@ GameObject:
   - component: {fileID: 1222454580}
   - component: {fileID: 1222454578}
   - component: {fileID: 1222454582}
+  - component: {fileID: 1222454583}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -632,6 +633,57 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   moveDir: {x: 2, y: 0}
+--- !u!61 &1222454583
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222454577}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.56, y: 1.16}
+  m_EdgeRadius: 0
+--- !u!1 &1264379280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4044998971562338172, guid: 6d05e78369f795d4aa37bdd3fd5a0880, type: 3}
+  m_PrefabInstance: {fileID: 2754613917443238724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2754613917443238724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -640,9 +692,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1734829853678645309, guid: 6d05e78369f795d4aa37bdd3fd5a0880, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4044998971562338172, guid: 6d05e78369f795d4aa37bdd3fd5a0880, type: 3}
       propertyPath: m_Name
       value: Terrain Chunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457442015405915804, guid: 6d05e78369f795d4aa37bdd3fd5a0880, type: 3}
+      propertyPath: m_Size.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457442015405915804, guid: 6d05e78369f795d4aa37bdd3fd5a0880, type: 3}
+      propertyPath: m_Size.y
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6076356334113479457, guid: 6d05e78369f795d4aa37bdd3fd5a0880, type: 3}
       propertyPath: m_LocalPosition.x
